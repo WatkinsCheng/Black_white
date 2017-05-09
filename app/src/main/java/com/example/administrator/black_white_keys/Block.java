@@ -4,16 +4,16 @@ import android.graphics.Color;
 import android.graphics.RectF;
 
 public class Block {
-    public static final int STATE_STANDARD = 0;
-    public static final int STATE_ACTIVE = 1;
-    public static final int STATE_ERROR = 2;
-    public static final int STATE_VISITED = 3;
-    private int[] mBgColors = new int[]{Color.WHITE,Color.BLACK,Color.RED,0xFFD2D2D2};
-    private int mState = STATE_STANDARD;
+    public static final int standard= 0;
+    public static final int active = 1;
+    public static final int error = 2;
+    public static final int visited= 3;
+    private int[] mBgColors = new int[]{Color.WHITE,Color.BLACK,Color.RED,0xFFD2D2D2}; //方块色
+    private int   mState = standard;
     private float mHeight;
     private float mWidth;
     private float mBorderSize;
-    private RectF mRectF;
+    private RectF mRectF;           //rectf用于表示坐标系的一块矩形区域（Rect是int类型 Rect是flaot型）
     public Block(float height, float width, float borderSize, RectF rectF) {
         this.mHeight = height;
         this.mWidth = width;
@@ -36,16 +36,16 @@ public class Block {
         return mBgColors[mState];
     }
     public void toggleVisited(){
-        mState = STATE_VISITED;
+        mState =visited;
     }
     public void toggleError(){
-        mState = STATE_ERROR;
+        mState = error;
     }
     public boolean isActive(){
-        return mState == STATE_ACTIVE;
+        return mState == active;
     }
     public boolean isStandard(){
-        return mState == STATE_STANDARD;
+        return mState == standard;
     }
 
     public int[] getBgColors() {

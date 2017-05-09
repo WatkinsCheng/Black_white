@@ -29,7 +29,6 @@ public class Score {
         mStrokeWidth = strokeWidth;
     }
 
-
     public float getTextSize() {
         return mTextSize;
     }
