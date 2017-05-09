@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="20dp"></corners>//圆边
+    <stroke android:width="5dp" android:color="@color/black"></stroke> //描边
+    <solid android:color="@color/white"></solid>  //填充
+</selector>
