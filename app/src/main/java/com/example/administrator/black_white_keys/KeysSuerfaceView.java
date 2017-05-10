@@ -2,6 +2,7 @@ package com.example.administrator.black_white_keys;
 /**
  * Created by Administrator on 2017/5/9.
  */
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,10 +13,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
-import com.example.administrator.black_white_keys.DensityUtil;
-import com.example.administrator.black_white_keys.Block;
-import com.example.administrator.black_white_keys.Score;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +108,7 @@ public class KeysSuerfaceView extends SurfaceView implements SurfaceHolder.Callb
 
     @Override
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-       //关闭线程
+        //关闭线程
         mIsRuning = false;
         mScheduled.shutdown();
         if(mGameListener!=null){

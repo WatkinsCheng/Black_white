@@ -25,6 +25,7 @@ public class Box_Dialog extends Dialog{
     public Box_Dialog(Context context) {
         this(context,0);
     }
+
     public Box_Dialog(Context context, int themeResId) {
         super(context, themeResId);
         mRootView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main,null);
@@ -57,24 +58,24 @@ public class Box_Dialog extends Dialog{
         }
     }
     public static class Builder {
-        private Box_Dialog mBox_Dialog;
+        private Box_Dialog mAlertScoreDialog;
         public Builder(Context context){
-            mBox_Dialog = new Box_Dialog(context);
+            mAlertScoreDialog = new Box_Dialog(context);
         }
         public Builder setScore(String score){
-            mBox_Dialog.setScore(score);
+            mAlertScoreDialog.setScore(score);
             return this;
         }
         public Builder setFinishClickListener(View.OnClickListener onClickListener){
-            mBox_Dialog.setFinishClickListener(onClickListener);
+            mAlertScoreDialog.setFinishClickListener(onClickListener);
             return this;
         }
         public Builder setRestartClickListener(View.OnClickListener onClickListener){
-            mBox_Dialog.setRestartClickListener(onClickListener);
+            mAlertScoreDialog.setRestartClickListener(onClickListener);
             return this;
         }
         public Box_Dialog builder(){
-            return mBox_Dialog;
+            return mAlertScoreDialog;
         }
     }
 }
