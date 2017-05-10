@@ -11,24 +11,24 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private CountDownView mCountDownView;
     private KeysSuerfaceView mKeysSuerfaceView;
-    private RelativeLayout mMarkRela;
+    private RelativeLayout mGray;
     private Box_Dialog mBox_Dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main);
         initView();
     }
     private void initView() {
-        mKeysSuerfaceView = (KeysSuerfaceView) findViewById(R.id.pianoTilesView);
+        mKeysSuerfaceView = (KeysSuerfaceView) findViewById(R.id.keysSuerfaceView);
         mCountDownView = (CountDownView) findViewById(R.id.countTextView);
-        mMarkRela = (RelativeLayout) findViewById(R.id.markRela);
+        mGray = (RelativeLayout) findViewById(R.id.Gray);
         mCountDownView.setData(Arrays.asList("3","2","1","开始"));
         mCountDownView.init();
         mCountDownView.setCountDownListener(new CountDownView.CountDownListener() {
             @Override
             public void finish() {
-                mMarkRela.setVisibility(View.GONE);
+                mGray.setVisibility(View.GONE);
                 mKeysSuerfaceView.setZOrderOnTop(true);
                 mKeysSuerfaceView.startGame();
             }
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         mBox_Dialog.dismiss();
                         mKeysSuerfaceView.restart();
-                        mMarkRela.setVisibility(View.VISIBLE);
+                        mGray.setVisibility(View.VISIBLE);
                         mCountDownView.init();
 
                     }

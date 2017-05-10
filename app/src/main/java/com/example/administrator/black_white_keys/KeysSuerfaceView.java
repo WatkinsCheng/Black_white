@@ -31,12 +31,10 @@ import java.util.concurrent.TimeUnit;
 public class KeysSuerfaceView extends SurfaceView implements SurfaceHolder.Callback, Runnable{
     private static final int LINE = 4;
     private static final int COL = 4;
+    //方块滚动速度
     private static final int REFRESH_DELAYED = 750;
     private SurfaceHolder mHolder;
-    /**
-     *
-     * 与SurfaceHolder绑定的Canvas
-     */
+
     private Canvas mCanvas;
 
     private Thread mDrawThread;  //绘制线程

@@ -27,10 +27,10 @@ public class Box_Dialog extends Dialog{
     }
     public Box_Dialog(Context context, int themeResId) {
         super(context, themeResId);
-        mRootView = LayoutInflater.from(getContext()).inflate(R.layout.activity,null);
+        mRootView = LayoutInflater.from(getContext()).inflate(R.layout.activity_main,null);
         tv_score = (TextView) mRootView.findViewById(R.id.tv_score);
-        btn_finish = (Button) mRootView.findViewById(R.id._btn_finish);
-        btn_restart = (Button) mRootView.findViewById(R.id.dialog_btn_restart);
+        btn_finish = (Button) mRootView.findViewById(R.id.choose_btn_finish);
+        btn_restart = (Button) mRootView.findViewById(R.id.choose_btn_restart);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
