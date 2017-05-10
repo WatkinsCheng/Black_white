@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 .setFinishClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.e("DEMO","点击点击");
+                        Log.e("DEMO","点击");
                         finish();
                         mBox_Dialog.dismiss();
                     }

@@ -118,51 +118,6 @@ public class KeysSuerfaceView extends SurfaceView implements SurfaceHolder.Callb
             mGameListener.gameEnd(mScore.getNumber());
         }
     }
-
-    @Override
-    public void run() {
-        while (mIsRuning) {
-            long start = System.currentTimeMillis();
-            draw();
-            long end = System.currentTimeMillis();
-            try {
-                if (end - start < 10) {
-                    Thread.sleep(10 - (end - start));
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    private void draw() {
-        try {
-            mCanvas = mHolder.lockCanvas();
-            mCanvas.drawColor(Color.BLACK);
-            if (mCanvas != null) {
-                for (int i = 0; i < mBlockData.size(); i++) {
-                    Block block = mBlockData.get(i);
-                    int index = i % COL;
-                    int col = i / COL % LINE;
-                    float left = index * block.getWidth() + index * block.getBorderSize();
-                    float right = left + block.getWidth();
-                    float top = col * block.getHeight() + col * block.getBorderSize();
-                    float bottom = block.getHeight() + top;
-                    RectF rectF = new RectF(left, top, right, bottom);
-                    block.setRectF(rectF);
-                    mBlockPaint.setColor(block.getBgColor());
-                    float xText = getMeasuredWidth()/2 - mScorePaint.measureText(mScore.getNumber())/2;
-                    mCanvas.drawText(mScore.getNumber(),xText,150,mScorePaint);
-                    mCanvas.drawRect(block.getRectF(), mBlockPaint);
-                }
-            }
-        } catch (Exception e) {
-
-        } finally {
-            if (mCanvas != null)
-                mHolder.unlockCanvasAndPost(mCanvas);
-        }
-    }
-
     /**
      * 初始化方块
      */
@@ -270,6 +225,50 @@ public class KeysSuerfaceView extends SurfaceView implements SurfaceHolder.Callb
             endGame();
         }
     }
+    @Override
+    public void run() {
+        while (mIsRuning) {
+            long start = System.currentTimeMillis();
+            draw();
+            long end = System.currentTimeMillis();
+            try {
+                if (end - start < 10) {
+                    Thread.sleep(10 - (end - start));
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    private void draw() {
+        try {
+            mCanvas = mHolder.lockCanvas();
+            mCanvas.drawColor(Color.BLACK);
+            if (mCanvas != null) {
+                for (int i = 0; i < mBlockData.size(); i++) {
+                    Block block = mBlockData.get(i);
+                    int index = i % COL;
+                    int col = i / COL % LINE;
+                    float left = index * block.getWidth() + index * block.getBorderSize();
+                    float right = left + block.getWidth();
+                    float top = col * block.getHeight() + col * block.getBorderSize();
+                    float bottom = block.getHeight() + top;
+                    RectF rectF = new RectF(left, top, right, bottom);
+                    block.setRectF(rectF);
+                    mBlockPaint.setColor(block.getBgColor());
+                    float xText = getMeasuredWidth()/2 - mScorePaint.measureText(mScore.getNumber())/2;
+                    mCanvas.drawText(mScore.getNumber(),xText,150,mScorePaint);
+                    mCanvas.drawRect(block.getRectF(), mBlockPaint);
+                }
+            }
+        } catch (Exception e) {
+
+        } finally {
+            if (mCanvas != null)
+                mHolder.unlockCanvasAndPost(mCanvas);
+        }
+    }
+    @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if(mScheduled!=null){

@@ -15,7 +15,7 @@
         android:id="@+id/Gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#d9666666"/>
+        android:background="#d9666666">
 
     <com.example.administrator.black_white_keys.CountDownView
         android:id="@+id/countTextView"
@@ -25,4 +25,5 @@
         android:textColor="#f00"
         android:textSize="70sp"
         android:textStyle="bold"/>
+    </RelativeLayout>
 </FrameLayout>
