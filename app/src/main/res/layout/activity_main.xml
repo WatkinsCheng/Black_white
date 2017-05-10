@@ -6,10 +6,23 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.black_white_keys.MainActivity">
 
+    <com.example.administrator.black_white_keys.KeysSuerfaceView
+        android:id="@+id/keysSuerfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <RelativeLayout
         android:id="@+id/gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#d9666666">
-    </RelativeLayout>
+        android:background="#d9666666"/>
+
+    <com.example.administrator.black_white_keys.CountDownView
+        android:id="@+id/countTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#f00"
+        android:textSize="70sp"
+        android:textStyle="bold" />
 </FrameLayout>

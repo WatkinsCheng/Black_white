@@ -30,7 +30,7 @@
 
         <Button
             android:text="@string/the_end"
-            android:id="@+id/dialog_btn_finish"
+            android:id="@+id/choose_btn_finish"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:background="@drawable/new_shape"
@@ -38,7 +38,7 @@
             android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/dialog_btn_restart"
+            android:id="@+id/choose_btn_restart"
             android:layout_marginLeft="5dp"
             android:background="@drawable/new_shape"
             android:text="@string/regame"
@@ -46,3 +46,5 @@
             android:layout_width="0dp"
             android:layout_height="match_parent" />
     </LinearLayout>
+
+</LinearLayout>
